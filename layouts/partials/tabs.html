@@ -1,0 +1,1 @@
+<nav class="tabs" aria-label="文章分类"><a href="{{ "" | relURL }}" {{ if .IsHome }}aria-current="page"{{ end }}>全部</a><a href="{{ "notes/" | relURL }}" {{ if eq .Section "notes" }}aria-current="page"{{ end }}>笔记</a><a href="{{ "journal/" | relURL }}" {{ if eq .Section "journal" }}aria-current="page"{{ end }}>日志</a></nav>

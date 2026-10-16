@@ -1,0 +1,32 @@
+baseURL = 'https://evanli526.github.io/'
+languageCode = 'zh-CN'
+defaultContentLanguage = 'zh'
+title = 'senyang'
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+disableKinds = ['taxonomy', 'term']
+summaryLength = 80
+[params]
+  description = '笔记与日常，慢慢记录。'
+[permalinks]
+  notes = '/notes/:slug/'
+  journal = '/journal/:slug/'
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = 'monokai'
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = true
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block = [['$$', '$$'], ['\[', '\]']]
+      inline = [['\(', '\)'], ['$', '$']]
+  [markup.goldmark.renderer]
+    unsafe = false
+[caches.images]
+  dir = ':cacheDir/images'
