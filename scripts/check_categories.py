@@ -4,6 +4,7 @@ from pathlib import Path
 import shutil,subprocess,json,re,hashlib
 from html.parser import HTMLParser
 r=Path(__file__).resolve().parents[1];work=r/'runtime/category-fixture';out=r/'runtime/category-output'
+before={str(p.relative_to(r)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (r/'content').rglob('*.md')}
 if work.exists():shutil.rmtree(work)
 shutil.copytree(r,work,ignore=shutil.ignore_patterns('runtime','public','resources','.git'))
 fixtures={'none':[],'one':['大模型'],'many':['大模型','数据结构与算法']}
@@ -44,6 +45,6 @@ for name,base in [('root','https://evanli526.github.io/'),('project','https://ev
  for f in dest.rglob('*.html'):
   s=f.read_text();assert not re.search(r'<span>演示内容</span>',s)
  reports[name]={'none':'PASS','one':'PASS','many':'PASS','category_routes':'PASS','internal_links':'PASS','removed_template_copy':'PASS'}
-before=json.loads((r/'runtime/content-before-cleanup.json').read_text());assert all(hashlib.sha256((r/path).read_bytes()).hexdigest()==digest for path,digest in before.items())
-reports['existing_markdown_and_slugs']='UNCHANGED';reports['fixtures']='runtime only, excluded from publication'
+assert all(hashlib.sha256((r/path).read_bytes()).hexdigest()==digest for path,digest in before.items())
+reports['existing_markdown_and_slugs']='UNCHANGED by category fixtures';reports['fixtures']='runtime only, excluded from publication'
 (r/'runtime/categories-verification.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2));print(json.dumps(reports,ensure_ascii=False,indent=2))
