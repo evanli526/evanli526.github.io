@@ -20,12 +20,15 @@ title: "我的文章标题"
 date: 2026-10-16T00:00:00Z
 slug: first-note
 description: "一句话摘要"
+categories: ["大模型", "数据结构与算法"]
 draft: false
 toc: true
 ---
 ```
 
-接着写Markdown正文。笔记放notes，日志放journal；文件所在栏目决定分类。日期不能晚于实际发布时刻，否则默认不构建。slug保持稳定以免旧链接失效。
+接着写Markdown正文。笔记放notes，日志放journal；文件所在目录决定栏目；学科分类另用categories填写。日期不能晚于实际发布时刻，否则默认不构建。slug保持稳定以免旧链接失效。
+
+`categories`填写学科或主题，独立于笔记/日志栏目。例如 `categories: ["大模型"]` 是单分类，`categories: ["大模型", "数据结构与算法"]` 是多分类，`categories: []` 或省略此行就不显示分类。分类只在文章卡片左下角展示，点名称可查看同分类文章。上面的分类是填写示例，不会自动应用于现有文章。`slug`仅决定网址短名，不用于分类；编辑分类时保留已有slug和文件路径，旧网址不变。
 
 现有文章：打开对应.md文件 → 铅笔Edit → 修改 → Commit changes到main。Actions完成后网站更新。关于介绍改content/about.md。
 

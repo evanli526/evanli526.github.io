@@ -6,10 +6,9 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
-disableKinds = ['taxonomy', 'term']
 summaryLength = 80
 [params]
-  description = '笔记与日常，慢慢记录。'
+  description = 'senyang 个人博客'
 [permalinks]
   notes = '/notes/:slug/'
   journal = '/journal/:slug/'
@@ -30,3 +29,6 @@ summaryLength = 80
     unsafe = false
 [caches.images]
   dir = ':cacheDir/images'
+
+[taxonomies]
+  category = "categories"

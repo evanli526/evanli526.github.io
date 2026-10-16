@@ -11,8 +11,8 @@
 {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="senyang" href="{{ .RelPermalink }}">{{ end }}
 </head><body>
 <a class="skip" href="#main">跳到正文</a>
-<header class="topbar"><button class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="site-menu"><span class="bars" aria-hidden="true"></span><span class="menu-label">目录</span></button><a class="brand" href="{{ "" | relURL }}">{{ site.Title }}</a><span class="topnote">NOTES &amp; DAYS</span></header>
-<div class="scrim" hidden></div><aside class="drawer" id="site-menu" aria-label="网站菜单" hidden><p class="eyebrow">A PERSONAL SPACE</p><nav><a href="{{ "notes/" | relURL }}">笔记<small>NOTES</small></a><a href="{{ "journal/" | relURL }}">日志<small>JOURNAL</small></a><a href="{{ "archives/" | relURL }}">归档<small>ARCHIVE</small></a><a href="{{ "about/" | relURL }}">关于<small>ABOUT</small></a></nav><p class="drawer-bottom">把想法记下来，<br>让日子慢慢生长。</p></aside>
+<header class="topbar"><button class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="site-menu"><span class="bars" aria-hidden="true"></span><span class="menu-label">目录</span></button><a class="brand" href="{{ "" | relURL }}">{{ site.Title }}</a></header>
+<div class="scrim" hidden></div><aside class="drawer" id="site-menu" aria-label="网站菜单" hidden><p class="eyebrow">Utopia</p><nav><a href="{{ "notes/" | relURL }}">笔记<small>NOTES</small></a><a href="{{ "journal/" | relURL }}">日志<small>JOURNAL</small></a><a href="{{ "archives/" | relURL }}">归档<small>ARCHIVE</small></a><a href="{{ "about/" | relURL }}">关于<small>ABOUT</small></a></nav></aside>
 {{ block "main" . }}{{ end }}
-<footer class="footer"><span>© {{ site.Title }}</span><span>笔记与日常，慢慢记录。 / <a href="{{ "about/" | relURL }}">关于这里</a></span></footer>
+<footer class="footer"><span>© {{ site.Title }}</span><span><a href="{{ "about/" | relURL }}">关于</a></span></footer>
 </body></html>

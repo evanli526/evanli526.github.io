@@ -15,3 +15,6 @@
 .entry p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}@media(max-width:400px){.hero-mark{display:none}.hero h1{font-size:28px}}
 
 .math-block{overflow-x:auto;padding:20px 0;text-align:center}math{color:var(--ink);font-size:1.15em}.article-body .highlight pre{margin:0}.article-body .highlight{margin:24px 0}.article-body .chroma{background:#1d201d!important;color:#efefea!important}.article-body .chroma span{color:inherit!important}.toc nav ul{padding-left:20px}.entry h3{overflow-wrap:anywhere}.article-body td,.article-body th{white-space:normal}.reading-meta{color:var(--muted);font-size:11px}
+
+/* Reader-provided subjects are independent from notes/journal sections. */
+.drawer .eyebrow{text-transform:none}.entry-bottom{align-items:flex-end;gap:16px}.entry-bottom>.read{margin-left:auto;flex-shrink:0}.entry-categories{display:flex;flex-wrap:wrap;gap:6px 14px;min-width:0}.category-link{overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:4px}.archive-row>a{overflow-wrap:anywhere;min-width:0}@media(max-width:400px){.entry-bottom{gap:12px}.entry-categories{gap:6px 10px}}
