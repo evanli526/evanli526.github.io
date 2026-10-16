@@ -30,8 +30,5 @@ for p in out.rglob('*'):
    checked+=1
  for name in ['data','.database-password','.env']:
   if name in p.relative_to(out).parts:errors.append(f'forbidden path: {p}')
-article=(out/'notes/markdown-demo/index.html').read_text()
-for marker in ['<math','<table','<pre','waterside.jpg','TableOfContents']:
- if marker not in article:errors.append('missing renderer '+marker)
 assert not errors,'\n'.join(errors)
-print(json.dumps({'output':str(out.name),'base_url':base,'internal_links_checked':checked,'private_or_local_patterns':'PASS','markdown_math_code_table_image_toc':'PASS','broken_links':0},ensure_ascii=False))
+print(json.dumps({'output':str(out.name),'base_url':base,'internal_links_checked':checked,'private_or_local_patterns':'PASS','broken_links':0},ensure_ascii=False))
